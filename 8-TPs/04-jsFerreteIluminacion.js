@@ -12,7 +12,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 function CalcularPrecio () 
 {
  let cantidadDeLamparas;
- let precio;
+ const PRECIOXUNIDAD = 35;
  let descuento;
  let nuevoPrecio;
  let marcaDeLampara;
@@ -24,12 +24,10 @@ function CalcularPrecio ()
 
  cantidadDeLamparas = parseInt(cantidadDeLamparas);
 
- precio = 35 * cantidadDeLamparas
- 
 if(cantidadDeLamparas >= 6)
 {
-     descuento = precio * (50/100);
-     nuevoPrecio = precio - descuento;
+     descuento = PRECIOXUNIDAD * (50/100);
+     nuevoPrecio = PRECIOXUNIDAD - descuento;
 
      document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
 }
@@ -37,15 +35,15 @@ else if(cantidadDeLamparas == 5)
    {
          if(marcaDeLampara == "ArgentinaLuz")
          {
-              descuento = precio * (40/100);
-              nuevoPrecio = precio - descuento;
+              descuento = PRECIOXUNIDAD * (40/100);
+              nuevoPrecio = PRECIOXUNIDAD - descuento;
 
               document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
          }
          else
          {
-               descuento = precio * (30/100);  
-               nuevoPrecio = precio - descuento;
+               descuento = PRECIOXUNIDAD * (30/100);  
+               nuevoPrecio = PRECIOXUNIDAD - descuento;
 
                document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
          }
@@ -54,15 +52,15 @@ else if(cantidadDeLamparas == 5)
       {
             if(marcaDeLampara== "ArgentinaLuz" || "FelipeLamparas")
             {
-                   descuento = precio * (25/100);  
-                   nuevoPrecio = precio - descuento;
+                   descuento = PRECIOXUNIDAD * (25/100);  
+                   nuevoPrecio = PRECIOXUNIDAD - descuento;
    
                    document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
             }
             else
             {
-                  descuento = precio * (20/100);  
-                  nuevoPrecio = precio - descuento;
+                  descuento = PRECIOXUNIDAD * (20/100);  
+                  nuevoPrecio = PRECIOXUNIDAD - descuento;
 
                   document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
             }
@@ -71,39 +69,45 @@ else if(cantidadDeLamparas == 5)
          {
                if(marcaDeLampara == "ArgentinaLuz")
                {
-                    descuento = precio * (15/100);  
-                    nuevoPrecio = precio - descuento;
+                    descuento = PRECIOXUNIDAD * (15/100);  
+                    nuevoPrecio = PRECIOXUNIDAD - descuento;
 
                     document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
                }
 
                else if(marcaDeLampara == "FelipeLampara")
                   {
-                        descuento = precio * (10/100);  
-                     nuevoPrecio = precio - descuento;
+                        descuento = PRECIOXUNIDAD * (10/100);  
+                     nuevoPrecio = PRECIOXUNIDAD - descuento;
         
                      document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
                   }
                   else
                   {
-                       descuento = precio * (5/100);  
-                       nuevoPrecio = precio - descuento;
+                       descuento = PRECIOXUNIDAD * (5/100);  
+                       nuevoPrecio = PRECIOXUNIDAD - descuento;
         
                        document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
-                  }
-                     
+                  }                     
+         }
+         else
+         {
+            nuevoPrecio = PRECIOXUNIDAD * cantidadDeLamparas;
+            document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
          }
 
-   if(nuevoPrecio > 120)
-   {
+if(nuevoPrecio > 120)
+{
      impuesto = nuevoPrecio * (10/100);
      nuevoPrecio = nuevoPrecio + impuesto;
 
      mensaje = "Usted pago $" + impuesto + " de IIBB";
 
      document.getElementById("txtIdprecioDescuento").value = mensaje;
-   }
+}  
+
 }
+
                
       
            
