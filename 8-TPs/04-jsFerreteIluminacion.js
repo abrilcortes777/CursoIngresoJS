@@ -8,7 +8,108 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
+//Abril Cortés Div X 
 function CalcularPrecio () 
 {
- 	
+ let cantidadDeLamparas;
+ let precio;
+ let descuento;
+ let nuevoPrecio;
+ let marcaDeLampara;
+ let impuesto;
+ let mensaje;
+
+  cantidadDeLamparas = document.getElementById("txtIdCantidad").value;
+  marcaDeLampara = document.getElementById("Marca").value;
+
+ cantidadDeLamparas = parseInt(cantidadDeLamparas);
+
+ precio = 35 * cantidadDeLamparas
+ 
+if(cantidadDeLamparas >= 6)
+{
+     descuento = precio * (50/100);
+     nuevoPrecio = precio - descuento;
+
+     document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
 }
+else if(cantidadDeLamparas == 5)
+   {
+         if(marcaDeLampara == "ArgentinaLuz")
+         {
+              descuento = precio * (40/100);
+              nuevoPrecio = precio - descuento;
+
+              document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
+         }
+         else
+         {
+               descuento = precio * (30/100);  
+               nuevoPrecio = precio - descuento;
+
+               document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
+         }
+   }
+      else if(cantidadDeLamparas == 4)
+      {
+            if(marcaDeLampara== "ArgentinaLuz" || "FelipeLamparas")
+            {
+                   descuento = precio * (25/100);  
+                   nuevoPrecio = precio - descuento;
+   
+                   document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
+            }
+            else
+            {
+                  descuento = precio * (20/100);  
+                  nuevoPrecio = precio - descuento;
+
+                  document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
+            }
+      }
+         else if(cantidadDeLamparas == 3)
+         {
+               if(marcaDeLampara == "ArgentinaLuz")
+               {
+                    descuento = precio * (15/100);  
+                    nuevoPrecio = precio - descuento;
+
+                    document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
+               }
+
+               else if(marcaDeLampara == "FelipeLampara")
+                  {
+                        descuento = precio * (10/100);  
+                     nuevoPrecio = precio - descuento;
+        
+                     document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
+                  }
+                  else
+                  {
+                       descuento = precio * (5/100);  
+                       nuevoPrecio = precio - descuento;
+        
+                       document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
+                  }
+                     
+         }
+
+   if(nuevoPrecio > 120)
+   {
+     impuesto = nuevoPrecio * (10/100);
+     nuevoPrecio = nuevoPrecio + impuesto;
+
+     mensaje = "Usted pago $" + impuesto + " de IIBB";
+
+     document.getElementById("txtIdprecioDescuento").value = mensaje;
+   }
+}
+               
+      
+           
+   
+
+
+
+
+   
