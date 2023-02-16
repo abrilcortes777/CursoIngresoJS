@@ -13,10 +13,11 @@ function CalcularPrecio ()
 {
 let cantidadDeLamparas;
 const PRECIOXUNIDAD = 35;
+let porcentaje = 0;
 let precio;
 let nuevoPrecio;
 let marca;
-let descuento;
+let precioFinal;
 let iibb;
 let porcentajeelIibb;
 
@@ -24,7 +25,75 @@ marca = document.getElementById("Marca").value;
 cantidadDeLamparas = document.getElementById("txtIdCantidad").value
 precio = cantidadDeLamparas * PRECIOXUNIDAD;
 
-//A
+
+if ( cantidadDeLamparas >= 6)
+{
+porcentaje = -50;
+
+}
+else if(cantidadDeLamparas == 5)
+{
+    switch(marca)
+    {
+        case "ArgentinaLuz":
+            porcentaje = -50;
+        break;
+        default:
+            porcentaje = -30;
+        break;
+
+    }
+    
+}
+else if(cantidadDeLamparas == 4)
+{
+    switch(marca)
+    {
+        case "ArgentinaLuz":
+        case "FelipeLamparas":
+            porcentaje = -25;
+        break;
+        default:
+            porcentaje = -20;
+        break;
+    }
+}
+else if(cantidadDeLamparas == 3)
+{
+    switch(marca)
+    {
+        case "ArgentinaLuz":
+            porcentaje = -15;
+        break;
+        case "FelipeLamparas":
+            porcentaje = -10;
+        break;
+        default:
+            porcentaje = -5;
+        break;
+        
+    }
+}
+else if(cantidadDeLamparas < 3)
+{
+    porcentaje = 0;
+}
+
+precioFinal = precio * porcentaje /100 + precio;
+
+
+
+if(precioFinal > 120)
+  {
+    porcentajeelIibb = precioFinal * 10/100;
+    iibb = precioFinal + porcentajeelIibb;
+    nuevoPrecio = precioFinal + iibb;
+    alert("Usted pago $" +iibb + " de IIBB");
+  }
+
+  document.getElementById("txtIdprecioDescuento").value = precioFinal;
+
+/*//A
 
 if ( cantidadDeLamparas >= 6)
 {
@@ -89,8 +158,9 @@ else if(cantidadDeLamparas < 3)
     nuevoPrecio = nuevoPrecio + iibb;
     alert("Usted pago $" +iibb + " de IIBB");
   }
-   document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;
+   document.getElementById("txtIdprecioDescuento").value = nuevoPrecio;*/ 
 }              
+ 
       
            
    
