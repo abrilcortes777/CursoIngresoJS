@@ -4,8 +4,17 @@ con números DESCENDENTES, desde el 10 al 1.*/
 //Abril Cortés Div X
 function mostrar()
 {
-	var contador;
-	contador=0; 
-	alert('iteración while');
+	let = i = 0;
+
+    i = i + 10;
+	
+	while(i >= 1 )
+	{
+		alert("Numero: " + i);
+		i = i - 1;
+		
+	}
+	
+	
 
 }//FIN DE LA FUNCIÓN

@@ -1,4 +1,5 @@
 /*
+Abril Cortes Div X
 Al presionar el botón pedir  números  
 hasta que el usuario quiera, mostrar:
 1-Suma de los negativos.
@@ -13,17 +14,67 @@ hasta que el usuario quiera, mostrar:
 function mostrar()
 {
 	//declarar contadores y variables 
-	var respuesta;
-	var numeroIngresado;
-	var sumaNegativos=0;
+	let respuesta;
+	let numeroIngresado;
+    let acumuladorDeNegativos = 0;
+	let contadorDeNegativos = 0;
+	let contadorDeCeros = 0;
+	let contadorDePositivos = 0;
+	let acumuladorDePositivos = 0;
+	let contadorPar = 0;
+	let promedioPositivos = 0;
+	let promedioNegativos = 0;
+	let diferencia;
 
 	respuesta="si";
 
-	while(respuesta=="si")
-	{
-		
-		respuesta=prompt("desea continuar?");
-	}//fin del while
+while(respuesta == "si")
+{
+   numeroIngresado = prompt("Ingrese un numero"); 
+   numeroIngresado = parseInt(numeroIngresado);
 
-	document.write("la suma de negativos es :"+sumaNegativos);
+   if(numeroIngresado < 0)
+   {
+      acumuladorDeNegativos = acumuladorDeNegativos + numeroIngresado;
+	  contadorDeNegativos++;
+   }
+   else if (numeroIngresado == 0)
+   {
+	    contadorDeCeros++;
+   } 
+   else
+   {
+       acumuladorDePositivos = acumuladorDePositivos + numeroIngresado;
+	   contadorDePositivos++;
+   }
+    if(numeroIngresado % 2 == 0)
+	{
+      contadorPar++;
+	}
+	respuesta = prompt("¿Quiere ingresar otro numero?");
+}	
+
+if( contadorDePositivos != 0)
+{
+	promedioPositivos = acumuladorDePositivos / contadorDePositivos;
+	
+}
+if(contadorDeNegativos != 0)
+{
+	promedioNegativos = acumuladorDeNegativos / contadorDeNegativos;
+}
+
+
+diferencia = contadorDePositivos - contadorDeNegativos;
+
+document.write("1-Suma de los negativos: " + acumuladorDeNegativos + ".");
+document.write("\n 2-Suma de los positivos: " + acumuladorDePositivos + ".");
+document.write("\n 3-Cantidad de positivos: " + contadorDePositivos + ".");
+document.write("\n 4-Cantidad de negativos: " + contadorDeNegativos + ".");
+document.write("\n 5-Cantidad de ceros: " + contadorDeCeros + ".");
+document.write("\n 6-Cantidad de números pares: " + contadorPar + ".");
+document.write("\n 7-Promedio de positivos: " + promedioPositivos + ".");
+document.write("\n 8-Promedios de negativos: " + promedioNegativos + ".");
+document.write("\n 9-Diferencia entre positivos y negativos: " + diferencia + ".");
+
 }//FIN DE LA FUNCIÓN
