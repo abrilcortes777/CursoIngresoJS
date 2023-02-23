@@ -11,7 +11,7 @@ Más de 10 intentos: “afortunado en el amor"*/
 //Abril Cortes Div X
 
 let numeroSecreto; 
-let contadorIntentos = 0;
+let contadorDeVeces = 0;
 
 function comenzar()
 {
@@ -31,51 +31,48 @@ function verificar()
   
 	  if(numeroIngresado > numeroSecreto)
    {
-	alert("Error");
 	alert(numeroSecreto);
-	
 	 diferencia = numeroIngresado - numeroSecreto;
-	 veces++;
+	 mensaje = "Se paso " + diferencia + " del numero secreto.";
+	 contadorDeVeces++;
    }
    else if(numeroIngresado < numeroSecreto)
    {
-	 alert("Error");
-	 alert(numeroSecreto);
-	 
-	  diferencia = numeroSecreto - numeroIngresado;
-	  veces++;
-	  
-  }
-  else if(numeroIngresado == numeroSecreto)
-  {
 	alert(numeroSecreto);
+	diferencia = numeroSecreto - numeroIngresado;
+	mensaje = "Faltan " + diferencia + " para llegar al numero secreto.";
+    contadorDeVeces++; 
   }
- switch(veces)
- {
+  if(numeroIngresado == numeroSecreto)
+  {
+	 switch(contadorDeVeces)
+     {
 	case 1:
-		mensaje = "Lo hizo luego de "+ veces + " intento,usted es un Psíquico";
+		mensaje = "Lo hizo luego de "+ contadorDeVeces + " intento,usted es un Psíquico";
 	break;
 	case 2:
-		mensaje = "Lo hizo luego de " + veces + " intentos,excelente percepción";
+		mensaje = "Lo hizo luego de " + contadorDeVeces + " intentos,excelente percepción";
 	break;
 	case 3:
-		mensaje = "Lo hizo luego de " + veces + " intentos.Esto es suerte";
+		mensaje = "Lo hizo luego de " + contadorDeVeces + " intentos.Esto es suerte";
 	break;
 	case 4:
-		mensaje = "Lo hizo luego de " + veces + "intentos.Excelente técnica";
+		mensaje = "Lo hizo luego de " + contadorDeVeces + "intentos.Excelente técnica";
 	break;
 	case 5: 
-		mensaje = "Lo hizo liego de " + veces + "intentos,usted está en la media";
+		mensaje = "Lo hizo luego de " + contadorDeVeces + "intentos,usted está en la media";
 	break;
 
- }
- if(veces >= 6 || veces <= 10 )
+     }
+  }
+
+ if(contadorDeVeces >= 6 && contadorDeVeces <= 10 )
  {
-	mensaje = "Lo hizo luego de " + veces + " intentos,falta técnica";
+	mensaje = "Lo hizo luego de " + contadorDeVeces + " intentos,falta técnica";
  }
- else
+ else if(contadorDeVeces > 10)
  {
-	mensaje = "Lo hizo luego de " + veces + " intentos,usted es afortunado en el amor";
+	mensaje = "Lo hizo luego de " + contadorDeVeces + " intentos,usted es afortunado en el amor";
  }
  document.getElementById("txtIdIntentos").value = mensaje;
 }

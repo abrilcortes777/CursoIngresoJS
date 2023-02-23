@@ -29,27 +29,20 @@ function verificar()
 
 	if(numeroIngresado > numeroSecreto)
  {
-  alert("Error");
-  alert(numeroSecreto);
-  
    diferencia = numeroIngresado - numeroSecreto;
    mensaje = "Se paso " + diferencia + " del numero secreto.";
-   veces++;
+   contadorDeVeces++;
  }
  else if(numeroIngresado < numeroSecreto)
  {
-   alert("Error");
-   alert(numeroSecreto);
-   
     diferencia = numeroSecreto - numeroIngresado;
     mensaje = "Faltan " + diferencia + " para llegar al numero secreto.";
-    veces++;
+    contadorDeVeces++;
     
 }
 else if(numeroIngresado == numeroSecreto)
 {
-  mensaje = "Usted es un ganador!!! y en solo " + veces + " intentos";
-  alert(numeroSecreto);
+  mensaje = "Usted es un ganador!!! y en solo " + contadorDeVeces + " intentos";
 }
  document.getElementById("txtIdIntentos").value = mensaje; 
 }
