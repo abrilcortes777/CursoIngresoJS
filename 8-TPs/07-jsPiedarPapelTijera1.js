@@ -10,6 +10,7 @@ let eleccionMaquina;
 function comenzar()
 {
 eleccionMaquina = Math.floor(Math.random() *(1 + 3 - 1) + 1);
+alert(eleccionMaquina);
 }//FIN DE LA FUNCIÓN
 
 function piedra()

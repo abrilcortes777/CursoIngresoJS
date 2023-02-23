@@ -36,19 +36,77 @@ function piedra()
     else if(eleccionMaquina == "Tijera")
     {
         alert("Usted gano,la maquina selecciono tijera");
+		ContadorDeGanadas++;
     }
 
 }//FIN DE LA FUNCIÓN
 function papel()
 {
+	switch(eleccionMaquina)
+    {
+    case 1:
+        eleccionMaquina = "Piedra";
+    break;
+    case 2:
+        eleccionMaquina = "Papel";
+    break;
+    case 3:
+        eleccionMaquina = "Tijera";
+    break;
+    }
 
+    if(eleccionMaquina == "Papel")
+    {
+        alert("Empate,la maquina selecciono papel"); 
+		ContadorDeEmpates++;
+    }
+    else if(eleccionMaquina == "Tijera")
+    {
+        alert("Usted perdio,la maquina elegio tijera");
+		ContadorDePerdidas++;
+    }
+    else if(eleccionMaquina == "Piedra")
+    {
+        alert("Usted gano,la maquina elegio piedra");
+		ContadorDeGanadas++;
+    }
 }//FIN DE LA FUNCIÓN
 function tijera()
 {
+	switch(eleccionMaquina)
+    {
+    case 1:
+        eleccionMaquina = "Piedra";
+    break;
+    case 2:
+        eleccionMaquina = "Papel";
+    break;
+    case 3:
+        eleccionMaquina = "Tijera";
+    break;
+    }
+
+    if(eleccionMaquina == "Papel")
+    {
+    alert("Usted gano,la maquina elegio papel");
+	ContadorDeGanadas++;
+    }	
+    else if(eleccionMaquina == "Piedra")
+    {
+    alert("Usted perdio,la maquina eligio piedra");
+	ContadorDePerdidas++;
+    }
+    else if(eleccionMaquina == "Tijera")
+    {
+    alert("Empate,la maquina eligio tijera");
+	ContadorDeEmpates++;
+    }
 	
-}//FIN DE LA FUNCIÓN
+document.getElementById("txtIdGanadas").value = ContadorDeGanadas;
+document.getElementById("txtIdEmpatadas").value = ContadorDeEmpates;
+document.getElementById("txtIdPerdidas").value = ContadorDePerdidas;
+}
+//FIN DE LA FUNCIÓN
 
 function mostrarResultado()
-{
-
-}
+{}
