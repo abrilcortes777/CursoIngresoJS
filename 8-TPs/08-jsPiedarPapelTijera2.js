@@ -1,7 +1,8 @@
-var eleccionMaquina;
-var ContadorDeEmpates=0;
-var ContadorDeGanadas=0;
-var ContadorDePerdidas=0;
+//Abril Cortes Div X 
+let eleccionMaquina;
+let ContadorDeEmpates=0;
+let ContadorDeGanadas=0;
+let ContadorDePerdidas=0;
 
 function comenzar()
 {
