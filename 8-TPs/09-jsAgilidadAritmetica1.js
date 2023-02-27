@@ -5,6 +5,7 @@ y una de las cuatro operaciones básicas (suma, resta,
  En el cuadro de texto resultado el jugador debe ingresar
  el resultado de la operación y presionar el botón Aceptar.
 se debe informar si el resultado es el correcto o no.
+Abril Cortes Div X
 */
 let respuesta;
 let operador;
@@ -61,9 +62,8 @@ function comenzar()
 
 }//FIN DE LA FUNCIÓN
 function Responder()
-{   let nuevoIntento = "si";
-     respuesta = document.getElementById("txtIdRespuesta").value;
-    do{
+{  
+    respuesta = document.getElementById("txtIdRespuesta").value;
     switch(operador)
     {
      case 1:
@@ -106,7 +106,4 @@ function Responder()
        alert("Intentelo nuevamete");
        
     } 
-
-}while(respuesta != respuesta){}
-
 }//FIN DE LA FUNCIÓN
