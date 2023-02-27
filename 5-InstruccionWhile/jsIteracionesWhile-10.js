@@ -14,17 +14,17 @@ hasta que el usuario quiera, mostrar:
 function mostrar()
 {
 	//declarar contadores y variables 
-	let respuesta;
-	let numeroIngresado;
-    let acumuladorDeNegativos = 0;
-	let contadorDeNegativos = 0;
-	let contadorDeCeros = 0;
-	let contadorDePositivos = 0;
-	let acumuladorDePositivos = 0;
-	let contadorPar = 0;
-	let promedioPositivos = 0;
-	let promedioNegativos = 0;
-	let diferencia;
+let respuesta;
+let numeroIngresado;
+let acumuladorDeNegativos = 0;
+let contadorDeNegativos = 0;
+let contadorDeCeros = 0;
+let contadorDePositivos = 0;
+let acumuladorDePositivos = 0;
+let contadorPar = 0;
+let promedioPositivos = 0;
+let promedioNegativos = 0;
+let diferencia;
 
 	respuesta="si";
 
@@ -53,19 +53,15 @@ while(respuesta == "si")
 	}
 	respuesta = prompt("¿Quiere ingresar otro numero?");
 }	
-
-if( contadorDePositivos != 0)
+if(contadorDePositivos != 0)
 {
 	promedioPositivos = acumuladorDePositivos / contadorDePositivos;
-	
 }
 if(contadorDeNegativos != 0)
 {
 	promedioNegativos = acumuladorDeNegativos / contadorDeNegativos;
 }
-
-
-diferencia = contadorDePositivos - contadorDeNegativos;
+diferencia = acumuladorDePositivos + acumuladorDeNegativos;
 
 document.write("1-Suma de los negativos: " + acumuladorDeNegativos + ".<br>");
 document.write("\n 2-Suma de los positivos: " + acumuladorDePositivos + ".<br>");
