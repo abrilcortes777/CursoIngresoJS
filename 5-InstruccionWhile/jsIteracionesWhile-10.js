@@ -67,14 +67,14 @@ if(contadorDeNegativos != 0)
 
 diferencia = contadorDePositivos - contadorDeNegativos;
 
-document.write("1-Suma de los negativos: " + acumuladorDeNegativos + ".");
-document.write("\n 2-Suma de los positivos: " + acumuladorDePositivos + ".");
-document.write("\n 3-Cantidad de positivos: " + contadorDePositivos + ".");
-document.write("\n 4-Cantidad de negativos: " + contadorDeNegativos + ".");
-document.write("\n 5-Cantidad de ceros: " + contadorDeCeros + ".");
-document.write("\n 6-Cantidad de números pares: " + contadorPar + ".");
-document.write("\n 7-Promedio de positivos: " + promedioPositivos + ".");
-document.write("\n 8-Promedios de negativos: " + promedioNegativos + ".");
-document.write("\n 9-Diferencia entre positivos y negativos: " + diferencia + ".");
+document.write("1-Suma de los negativos: " + acumuladorDeNegativos + ".<br>");
+document.write("\n 2-Suma de los positivos: " + acumuladorDePositivos + ".<br>");
+document.write("\n 3-Cantidad de positivos: " + contadorDePositivos + ".<br>");
+document.write("\n 4-Cantidad de negativos: " + contadorDeNegativos + ".<br>");
+document.write("\n 5-Cantidad de ceros: " + contadorDeCeros + ".<br>");
+document.write("\n 6-Cantidad de números pares: " + contadorPar + ".<br>");
+document.write("\n 7-Promedio de positivos: " + promedioPositivos +".<br>");
+document.write("\n 8-Promedios de negativos: " + promedioNegativos + ".<br>");
+document.write("\n 9-Diferencia entre positivos y negativos: " + diferencia + ".<br>");
 
 }//FIN DE LA FUNCIÓN
